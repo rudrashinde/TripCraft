@@ -1,0 +1,38 @@
+/* src/components/Navbar.css */
+
+.navbar {
+    display: flex;                /* Use flexbox for layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center;         /* Center items vertically */
+    background-color: #007BFF;  /* A nice travel-themed blue */
+    padding: 1rem 2rem;         /* Add some padding */
+    color: white;                /* White text for contrast */
+  }
+  
+  .navbar h1 {
+    font-size: 1.5rem;           /* Logo size */
+    margin: 0;                   /* Remove default margin */
+  }
+  
+  .navbar ul {
+    list-style: none;            /* Remove default list styles */
+    display: flex;               /* Use flexbox for list items */
+    margin: 0;                   /* Remove default margin */
+    padding: 0;                  /* Remove default padding */
+  }
+  
+  .navbar li {
+    margin-left: 2rem;           /* Space between list items */
+  }
+  
+  .navbar a {
+    text-decoration: none;        /* Remove underline from links */
+    color: white;                /* White text for links */
+    font-weight: bold;           /* Bold font for links */
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;   /* Underline on hover */
+    color: #FFD700;              /* Gold color on hover for a touch of elegance */
+  }
+  

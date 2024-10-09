@@ -1,0 +1,78 @@
+/* src/pages/HomePage.css */
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: white; /* Light background color */
+}
+
+.hero-section {
+    width: 100%;
+    height: 90vh; /* View height of 90% */
+    display: flex;
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Center content vertically */
+    padding: 2rem; /* Add some padding */
+}
+
+.content-wrapper {
+    max-width: 50%; /* Take half the width */
+    padding: 2rem;
+    background-color: #fff; /* White background */
+    border-radius: 0; /* No border radius */
+    text-align: left; /* Align the text to the left */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: none; /* Remove box shadow */
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #777;
+}
+
+.cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-start; /* Align button to the left */
+}
+
+.cta-button:hover {
+    background-color: #e68900;
+}
+
+.image-wrapper {
+    max-width: 45%; /* Image takes the remaining width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
