@@ -3,7 +3,7 @@
 // import DestinationSelector from '../components/DestinationSelector';
 // import TravelModeSelector from '../components/TravelModeSelector';
 // import Itinerary from '../components/Itinerary';
-// import './ItineraryPage.css';
+// import './ItineraryPage.css'; // Import the CSS file here
 
 // const ItineraryPage = () => {
 //   const [numberOfPeople, setNumberOfPeople] = useState(1);
@@ -32,44 +32,48 @@
 //   };
 
 //   return (
-//     <div>
-//       <h1>Plan Your Custom Itinerary</h1>
-//       <label>
-//         Number of People:
-//         <input
-//           type="number"
-//           min="1"
-//           value={numberOfPeople}
-//           onChange={handlePeopleCountChange}
-//         />
-//       </label>
-//       {/* Render AgeSelector for each person */}
-//       {[...Array(numberOfPeople)].map((_, index) => (
-//         <AgeSelector
-//           key={index}
-//           index={index}
-//           setAgeGroup={(age) => handleAgeChange(index, age)} // Update age for each person
-//         />
-//       ))}
-//       <label>
-//         Budget:
-//         <select onChange={handleBudgetChange}>
-//           <option value="">Select Budget...</option>
-//           <option value="low">Low</option>
-//           <option value="medium">Medium</option>
-//           <option value="high">High</option>
-//         </select>
-//       </label>
-//       <DestinationSelector setDestination={setDestination} />
-//       {destination && <TravelModeSelector ages={peopleAges} budget={budget} setTravelMode={setTravelMode} />}
-//       {travelMode && (
-//         <Itinerary ageGroup={peopleAges} destination={destination} travelMode={travelMode} />
-//       )}
+//     <div className="itinerary-page">
+//       <div className="itinerary-content">
+//         <h1 className="itinerary-title">Plan Your Custom Itinerary</h1>
+//         <label>
+//           Number of People:
+//           <input
+//             type="number"
+//             min="1"
+//             value={numberOfPeople}
+//             onChange={handlePeopleCountChange}
+//           />
+//         </label>
+//         {/* Render AgeSelector for each person */}
+//         {[...Array(numberOfPeople)].map((_, index) => (
+//           <AgeSelector
+//             key={index}
+//             index={index}
+//             setAgeGroup={(age) => handleAgeChange(index, age)} // Update age for each person
+//           />
+//         ))}
+//         <label>
+//           Budget:
+//           <select onChange={handleBudgetChange}>
+//             <option value="">Select Budget...</option>
+//             <option value="low">Low</option>
+//             <option value="medium">Medium</option>
+//             <option value="high">High</option>
+//           </select>
+//         </label>
+//         <DestinationSelector setDestination={setDestination} />
+//         {destination && <TravelModeSelector ages={peopleAges} budget={budget} setTravelMode={setTravelMode} />}
+//         {travelMode && (
+//           <Itinerary ageGroup={peopleAges} destination={destination} travelMode={travelMode} />
+//         )}
+//       </div>
 //     </div>
 //   );
 // };
 
 // export default ItineraryPage;
+
+// src/pages/ItineraryPage.js
 import React, { useState } from 'react';
 import AgeSelector from '../components/AgeSelector';
 import DestinationSelector from '../components/DestinationSelector';
@@ -107,41 +111,54 @@ const ItineraryPage = () => {
     <div className="itinerary-page">
       <div className="itinerary-content">
         <h1 className="itinerary-title">Plan Your Custom Itinerary</h1>
-        <label>
-          Number of People:
-          <input
-            type="number"
-            min="1"
-            value={numberOfPeople}
-            onChange={handlePeopleCountChange}
-          />
-        </label>
-        {/* Render AgeSelector for each person */}
-        {[...Array(numberOfPeople)].map((_, index) => (
-          <AgeSelector
-            key={index}
-            index={index}
-            setAgeGroup={(age) => handleAgeChange(index, age)} // Update age for each person
-          />
-        ))}
-        <label>
-          Budget:
-          <select onChange={handleBudgetChange}>
-            <option value="">Select Budget...</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </label>
-        <DestinationSelector setDestination={setDestination} />
-        {destination && <TravelModeSelector ages={peopleAges} budget={budget} setTravelMode={setTravelMode} />}
-        {travelMode && (
-          <Itinerary ageGroup={peopleAges} destination={destination} travelMode={travelMode} />
-        )}
+        <div className="input-section">
+          <label>
+            Number of People:
+            <input
+              type="number"
+              min="1"
+              value={numberOfPeople}
+              onChange={handlePeopleCountChange}
+            />
+          </label>
+          {/* Render AgeSelector for each person */}
+          <div className="age-selectors">
+            {[...Array(numberOfPeople)].map((_, index) => (
+              <AgeSelector
+                key={index}
+                index={index}
+                setAgeGroup={(age) => handleAgeChange(index, age)} // Update age for each person
+              />
+            ))}
+          </div>
+          <label>
+            Budget:
+            <select onChange={handleBudgetChange}>
+              <option value="">Select Budget...</option>
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <DestinationSelector setDestination={setDestination} />
+          {destination && (
+            <TravelModeSelector
+              ages={peopleAges}
+              budget={budget}
+              setTravelMode={setTravelMode}
+            />
+          )}
+          {travelMode && (
+            <Itinerary
+              ageGroup={peopleAges}
+              destination={destination}
+              travelMode={travelMode}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default ItineraryPage;
-

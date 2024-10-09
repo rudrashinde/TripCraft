@@ -1,0 +1,82 @@
+/* src/components/SpecialOffers.css */
+
+.special-offers-section {
+    width: 100%; /* Full width */
+    padding: 2rem; /* Add padding around the section */
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.offers-title {
+    text-align: center; /* Center the title */
+    font-size: 2.5rem; /* Similar to highlights title */
+    margin-bottom: 1.5rem; /* Space below the title */
+    color: #333; /* Title color */
+}
+
+/* Flex container for the offer cards */
+.offers-grid {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center cards horizontally */
+    gap: 1.5rem; /* Space between cards */
+    padding: 0 2rem; /* Padding for container */
+}
+
+.offer-card {
+    background-color: white; /* Card background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem; /* Padding for card content */
+    text-align: center; /* Center text in card */
+    width: 250px; /* Fixed width for uniformity */
+    transition: transform 0.3s; /* Smooth scaling */
+}
+
+.offer-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.offer-title {
+    font-size: 1.5rem; /* Title size */
+    margin-bottom: 0.5rem; /* Margin around the title */
+    color: #333; /* Title color */
+}
+
+.offer-description {
+    font-size: 1rem; /* Description size */
+    color: #555; /* Description color */
+    margin-bottom: 1rem; /* Margin below description */
+}
+
+.offer-expiration {
+    font-size: 0.9rem; /* Smaller font for expiration */
+    color: #888; /* Expiration color */
+}
+
+.countdown-timer {
+    font-size: 1rem; /* Timer font size */
+    color: #ff9800; /* Highlight the countdown timer */
+    margin-top: 0.5rem; /* Space above timer */
+}
+
+.newsletter-input {
+    width: 100%; /* Full width */
+    padding: 0.5rem; /* Padding */
+    margin-top: 0.5rem; /* Margin above input */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.newsletter-button {
+    margin-top: 0.5rem; /* Space above button */
+    padding: 0.5rem 1rem; /* Button padding */
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.newsletter-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

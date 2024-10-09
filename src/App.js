@@ -55,6 +55,8 @@ import ItineraryPage from './pages/ItineraryPage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import WelcomePage from './pages/WelcomePage'; // Import WelcomePage
+import Footer from './components/Footer'; // Ensure the path is correct
+
 
 const App = () => {
   return (
@@ -67,6 +69,7 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/welcome" element={<WelcomePage />} /> {/* Add WelcomePage route */}
       </Routes>
+      <Footer />
     </Router>
   );
 };
