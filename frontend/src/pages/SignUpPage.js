@@ -1,74 +1,47 @@
-// // src/pages/SignUpPage.js
-// import React, { useState } from 'react';
-
-// const SignUpPage = () => {
-//   const [name, setName] = useState('');
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Handle sign-up logic here
-//     console.log("Signing up:", name, email, password);
-//   };
-
-//   return (
-//     <div className="signup-page">
-//       <h1>Sign Up</h1>
-//       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label>Name:</label>
-//           <input
-//             type="text"
-//             value={name}
-//             onChange={(e) => setName(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label>Email:</label>
-//           <input
-//             type="email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label>Password:</label>
-//           <input
-//             type="password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             required
-//           />
-//         </div>
-//         <button type="submit">Sign Up</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default SignUpPage;
-
 // src/pages/SignUpPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SignUpPage.css'; // Import the new CSS
+import './SignUpPage.css';
 
 const SignUpPage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    if (username && email && password) {
-      // Navigate to welcome page after signup
-      navigate('/welcome');
-    } else {
-      alert('Please fill in all fields.');
+
+    // Clear any previous messages
+    setMessage('');
+
+    // Basic validation for empty fields
+    if (!username || !email || !password) {
+      setMessage('All fields are required.');
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5001/api/auth/register', { // Adjusted API endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }), // Removed email if not used in backend
+      });
+      const data = await response.json();
+      if (response.ok) {
+        // If registration is successful, navigate to the welcome page
+        setMessage('Registration successful!');
+        navigate('/welcome');
+      } else {
+        // Display error message from response if registration fails
+        setMessage(data.message || 'Error occurred during registration.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('Server error, please try again later.');
     }
   };
 
@@ -114,6 +87,7 @@ const SignUpPage = () => {
             </div>
             <button type="submit" className="signup-btn">Sign Up</button>
           </form>
+          {message && <p className="message">{message}</p>} {/* Display success or error message */}
         </div>
       </div>
     </div>
@@ -121,4 +95,3 @@ const SignUpPage = () => {
 };
 
 export default SignUpPage;
-
