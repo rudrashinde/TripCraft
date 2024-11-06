@@ -1,162 +1,79 @@
-/* .itinerary-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-  padding: 2rem;
-}
+/* src/pages/ItineraryPage.css */
 
-.itinerary-content {
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.itinerary-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
-  text-align: center;
-}
-
-.input-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-label {
-  font-size: 1.2rem;
-  color: #555;
-}
-
-input[type="number"], select {
-  padding: 0.5rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-input[type="number"]:focus, select:focus {
-  border-color: #ff9800;
-  outline: none;
-}
-
-.age-selectors {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-} */
-
+/* Main container */
 .itinerary-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  background-color: white;
-  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
 }
 
 .itinerary-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: #333;
+  text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
 }
 
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 1.2em;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Must-See Places */
 .must-see-places {
-  width: 100%;
-  padding: 2rem;
-  background-color: #f9f9f9;
+  margin-bottom: 50px;
 }
 
 .must-see-places h2 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2em;
+  margin-bottom: 20px;
   color: #333;
 }
 
 .places-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .place-card {
-  background-color: white;
+  background-color: #f8f8f8;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s;
-}
-
-.place-card:hover {
-  transform: scale(1.05);
 }
 
 .place-card img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
-}
-
-.itineraries {
-  width: 100%;
-  padding: 2rem;
-  background-color: #fff;
-}
-
-.itineraries h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.itineraries ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.itineraries li {
-  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  margin: 0.5rem 0;
-  transition: background-color 0.3s;
 }
 
-.itineraries li:hover {
-  background-color: #e9e9e9;
+.place-card h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
 }
 
-.itineraries h3 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-  color: #333;
+.place-card p {
+  font-size: 1.1em;
 }
 
-.itineraries p {
-  font-size: 1rem;
-  color: #555;
-  padding: 0 0.5rem;
-}
-
-/* Optional: Style for buttons if needed */
 .cta-button {
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  background-color: #ff9800;
+  padding: 10px 20px;
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 5px;
@@ -165,5 +82,39 @@ input[type="number"]:focus, select:focus {
 }
 
 .cta-button:hover {
-  background-color: #e68900;
+  background-color: #0056b3;
+}
+
+/* Itineraries Section */
+.itineraries h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.itinerary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.itinerary-card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.itinerary-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.itinerary-card p {
+  font-size: 1.1em;
+}
+
+.itinerary-card button {
+  margin-top: 10px;
 }

@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css'; 
@@ -8,6 +6,7 @@ import tokyoImage from '../assets/tokyo.jpg';
 import sydneyImage from '../assets/sydney.jpg';
 import parisImage from '../assets/paris.jpg';
 import baliImage from '../assets/bali.jpg'; 
+import switzerlandImage from  '../assets/switzerland.jpg'; 
 import UserSuccessStories from '../components/UserSuccessStories'; 
 import SpecialOffers from '../components/SpecialOffers';
 
@@ -63,6 +62,14 @@ const HomePage = () => {
             <h3 className="destination-name">Bali</h3>
             <p className="destination-description">
               Relax on the beautiful beaches of Bali and explore its rich culture and stunning landscapes.
+            </p>
+            <Link to="/itinerary" className="explore-button">Explore</Link>
+          </div>
+          <div className="destination-card">
+            <img src={switzerlandImage} alt="Switzerland" className="destination-image" />
+            <h3 className="destination-name">Switzerland</h3>
+            <p className="destination-description">
+            Discover Switzerland’s stunning Alps, serene lakes, and charming villages in a breathtaking alpine paradise.
             </p>
             <Link to="/itinerary" className="explore-button">Explore</Link>
           </div>

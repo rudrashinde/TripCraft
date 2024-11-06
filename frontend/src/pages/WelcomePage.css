@@ -1,0 +1,138 @@
+/* WelcomePage.css */
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    /* background-color: #ff9800; */
+    color: black;
+    border-radius: 8px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .start-planning-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .start-planning-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Highlights Section */
+  .highlights {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .highlight-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.4rem;
+    color: #ff9800;
+  }
+  
+  .highlight-card p {
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .testimonial-card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+  }
+  
+  .testimonial-author {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+  }
+  
+  /* CTA Section */
+  .cta {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .cta-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: #222;
+  }
+  
